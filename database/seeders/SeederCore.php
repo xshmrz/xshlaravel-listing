@@ -31,7 +31,7 @@
                 $user->is_vendor           = \EnumUserIsVendor::Yes;
                 $user->save();
             }
-            $demo = include "Demo.php";
+            $demo = include "Date.php";
             foreach ($demo["listing_category"] as $key => $value) {
                 $listing_category         = ListingCategory();
                 $listing_category->name   = $value;

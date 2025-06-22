@@ -1,2 +1,3 @@
 ### xshlaravel-listing
-Listing : Berber,Kuaför,Güzellik Merkezi Vb
+Listing & Directory<br>
+Berber,Kuaför,Güzellik Merkezi Vb
