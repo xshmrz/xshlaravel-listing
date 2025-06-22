@@ -1,0 +1,68 @@
+//--------------------------------------------------
+// ------ C O L O R S ------------------------------
+//--------------------------------------------------
+// Theme Colors
+$colorPrimary              : #1E74FD;
+$colorSecondary            : #6C7C94;
+$colorInfo                 : #592BCA;
+$colorSuccess              : #34C759;
+$colorWarning              : #FE9500;
+$colorDanger               : #EC4433;
+$default-theme-colors      : (
+		"primary":    #3a4d9d,
+		"secondary":  #759cff,
+		"info":       #bfd6fd,
+		"success":    #00bd6e,
+		"warning":    #e9d200,
+		"danger":     #fd1c00,
+);
+$colorPrimary              : if(map-has-key($default-theme-colors, "primary"), map-get($default-theme-colors, "primary"), $colorPrimary);
+$colorSecondary            : if(map-has-key($default-theme-colors, "secondary"), map-get($default-theme-colors, "secondary"), $colorSecondary);
+$colorInfo                 : if(map-has-key($default-theme-colors, "info"), map-get($default-theme-colors, "info"), $colorInfo);
+$colorSuccess              : if(map-has-key($default-theme-colors, "success"), map-get($default-theme-colors, "success"), $colorSuccess);
+$colorWarning              : if(map-has-key($default-theme-colors, "warning"), map-get($default-theme-colors, "warning"), $colorWarning);
+$colorDanger               : if(map-has-key($default-theme-colors, "danger"), map-get($default-theme-colors, "danger"), $colorDanger);
+// Background
+$colorBackground           : #F9F9F9;
+// Line Colors
+$colorLine                 : #E1E1E1;
+// Text Colors
+$colorHeading              : #141515;
+$colorText                 : #4F5050;
+$colorLight                : #A1A1A2;
+// Dark Mode Colors
+$darkModeBackground        : #0C1624;
+$darkModeContentBackground : #0F1C2F;
+$darkModeColorHeading      : #FFFFFF;
+$darkModeColorText         : #8195A6;
+$darkModeColorLight        : #586D7F;
+$darkModeColorLine         : #1B283B;
+//--------------------------------------------------
+// ------ FONT ------------------------------
+//--------------------------------------------------
+// Google font
+@import url('/assets/font/fira-sans/fira-sans.min.css');
+@import url('/assets/font/opensans/opensans.min.css');
+@import url('/assets/font/feather/feather.min.css');
+@import url('/assets/font/fontawesome-full/css/all.min.css');
+// Font Family
+$fontFamily                : 'Fira Sans', sans-serif;
+// Define font weight
+$regular                   : 400; // font regular
+$medium                    : 500; // font medium (if font does not support medium, define the semibold)
+$bold                      : 700; // font bold or black
+// Typography
+$lineHeight                : 1.55rem;
+$letterSpacing             : -0.015rem;
+// Sizes
+$fontSizeHeadingXLarge     : 34px;
+$fontSizeHeadingLarge      : 24px;
+$fontSizeHeading           : 17px;
+$fontSize                  : 15px;
+$fontSizeSub               : 13px;
+$fontSizeCaption           : 11px;
+//--------------------------------------------------
+// ------ OTHERS -----------------------------------
+//--------------------------------------------------
+$borderRadius              : 6px;
+$boxShadow                 : 0 3px 6px 0 rgba(0, 0, 0, .1), 0 1px 3px 0 rgba(0, 0, 0, .08);

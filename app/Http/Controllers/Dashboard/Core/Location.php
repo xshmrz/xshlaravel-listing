@@ -1,0 +1,74 @@
+<?php
+    namespace App\Http\Controllers\Dashboard\Core;
+    use Illuminate\Http\Request;
+    use App\Helpers\Validation;
+    use App\Http\Controllers\Controller;
+    use Validator;
+    use Str;
+    class Location extends Controller {
+        public function index() {
+            render_view($this->data);
+        }
+        public function create() {
+            render_view($this->data);
+        }
+        public function store(Request $request) {
+            $data = $request->all();
+            if (method_exists(Validation::class, "LocationStore")) {
+                $validator = Validation::LocationStore($data);
+            }
+            else {
+                $validator = Validator::make($data, []);
+            }
+            if ($validator->fails()) {
+                session()->flash('validation', Str::title($validator->errors()->first()));
+                return redirect()->back()->withInput();
+            }
+            $location = Location();
+            $location->fill($data);
+            $location->save();
+            session()->flash('success', trans("app.İşlem Başarılı"));
+            return $request->has("redirect") ? redirect()->to($request->get("redirect")) : redirect()->route("dashboard.location.edit", $location->id);
+        }
+        public function show($id) {
+            $this->data["id"] = $id;
+            render_view($this->data);
+        }
+        public function edit($id) {
+            $this->data["id"] = $id;
+            render_view($this->data);
+        }
+        public function update(Request $request, $id) {
+            $data = $request->all();
+            if (method_exists(Validation::class, "LocationUpdate")) {
+                $validator = Validation::LocationUpdate($data);
+            }
+            else {
+                $validator = Validator::make($data, []);
+            }
+            if ($validator->fails()) {
+                session()->flash('validation', Str::title($validator->errors()->first()));
+                return redirect()->back()->withInput();
+            }
+            $location = Location()->find($id);
+            if (!$location) {
+                session()->flash('validation', trans("app.Kayıt Bulunamadı"));
+                return redirect()->route("dashboard.location.index");
+            }
+            $location->fill($data);
+            $location->save();
+            session()->flash('success', trans("app.İşlem Başarılı"));
+            return $request->has("redirect") ? redirect()->to($request->get("redirect")) : redirect()->route("dashboard.location.edit", $id);
+        }
+        public function destroy($id) {
+            $location = Location()->find($id);
+            if ($location) {
+                $location->delete();
+                session()->flash('success', trans("app.İşlem Başarılı"));
+            }
+            else {
+                session()->flash('validation', trans("app.Kayıt Bulunamadı"));
+            }
+            return request()->has("redirect") ? redirect()->to(request()->get("redirect"))->withInput() : redirect()->route("dashboard.location.index")->withInput();
+        }
+    }

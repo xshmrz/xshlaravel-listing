@@ -1,0 +1,14 @@
+# JavaScript ve CSS’i tamamen gizle
+*.js     linguist-detectable=false
+*.jsx    linguist-detectable=false
+*.ts     linguist-detectable=false
+*.css    linguist-detectable=false
+
+# HTML, JSON, YAML gibi diğer dilleri de isterseniz kapatın
+*.html   linguist-detectable=false
+*.json   linguist-detectable=false
+*.yml    linguist-detectable=false
+*.yaml   linguist-detectable=false
+
+# Blade dosyalarını açıkça PHP olarak işaretle
+*.blade.php linguist-language=PHP

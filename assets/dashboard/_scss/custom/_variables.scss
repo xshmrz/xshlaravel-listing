@@ -1,0 +1,11 @@
+$font-size-root : 14px !default;
+// DATATABLE
+.dt-orderable-asc, .dt-orderable-desc {
+	padding : .75rem !important;
+	}
+.dt-column-order {
+	display : none !important;
+	}
+.dt-container .pagination {
+	justify-content : center
+	}
