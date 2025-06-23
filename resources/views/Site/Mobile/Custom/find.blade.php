@@ -2,6 +2,9 @@
     $listingData = Listing()->where([listing_category_id => $listing_category_id, location_id => $location_id])->get()
 ?>
 @extends("Site.Mobile.layout")
+@section("section-header")
+	@include("Site.Mobile.Module.header")
+@endsection
 @section("section-main")
 	<div id="appCapsule" class="full-height">
 		<div class="mt-2 mb-4">
@@ -14,4 +17,7 @@
 		</div>
 		@include("Site.Mobile.Module.search")
 	</div>
+@endsection
+@section("section-footer")
+	@include("Site.Mobile.Module.footer")
 @endsection
