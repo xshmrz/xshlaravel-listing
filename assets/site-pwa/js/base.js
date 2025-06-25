@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }).mount());
     // Multiple Carousel
     document.querySelectorAll('.carousel-multiple').forEach(carousel => new Splide(carousel, {
-        perPage    : 4,
+        perPage    : 6,
         rewind     : true,
         type       : 'loop',
         gap        : 16,
@@ -346,10 +346,10 @@ document.addEventListener('DOMContentLoaded', function () {
         pagination : false,
         breakpoints: {
             768: {
-                perPage: 2
+                perPage: 4
             },
             991: {
-                perPage: 3
+                perPage: 4
             }
         }
     }).mount());

@@ -37,7 +37,7 @@
                 $listing_category->name   = $value;
                 $listing_category->status = EnumListingCategoryStatus::Active;
                 $listing_category->save();
-                foreach (Location()->whereNotNull(parent_id)->get() as $location) {
+                foreach (Location()->whereNotNull(parent_id)->limit(10)->get() as $location) {
                     for ($iListing = 1; $iListing <= rand(5, 10); $iListing++) {
                         $listing                      = Listing();
                         $listing->location_id         = $location->id;
@@ -45,6 +45,16 @@
                         $listing->listing_category_id = $listing_category->id;
                         $listing->name                = fake()->words(rand(2, 3), true);
                         $listing->save();
+                        for ($iWorker = 1; $iWorker <= rand(1, 5); $iWorker++) {
+                            $worker             = Worker();
+                            $worker->listing_id = $listing->id;
+                            $worker->first_name = fake()->firstName;
+                            $worker->last_name  = fake()->lastName;
+                            $worker->email      = \Str::slug($worker->first_name.'-'.$worker->last_name).'@demo.com';
+                            $worker->password   = md5('123456');
+                            $worker->gsm        = fake()->numerify('532#######');
+                            $worker->save();
+                        }
                     }
                 }
             }
