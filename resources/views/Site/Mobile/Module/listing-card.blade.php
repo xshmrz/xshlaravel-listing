@@ -1,5 +1,9 @@
 <a href="{{ route("site.listing.show",$listing->id) }}" class="card">
 	<img src="assets/demo/bg-{{ rand(1,60) }}.jpg" class="card-img-top" alt="image" style="height: 200px; object-fit: cover">
+	<div class="position-absolute p-2">
+		<div><span class="badge badge-success rounded">08:30 - 23:00</span></div>
+		<div><span class="badge badge-success rounded">Pzt, Sal, Çar, Per, Cum, Cmt</span></div>
+	</div>
 	<div class="card-body d-flex justify-content-between align-items-center">
 		<div>
 			<h6 class="card-subtitle">{{ $listing->location->parent_name }} / {{ $listing->location->name }}</h6>

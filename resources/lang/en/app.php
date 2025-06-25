@@ -42,6 +42,7 @@ return [
     "Yönetim : Sistem" => "Yönetim : Sistem",
     "Yönetim Paneli" => "Yönetim Paneli",
     "Yönetim Paneli Giriş Yetkiniz Yok" => "Yönetim Paneli Giriş Yetkiniz Yok",
+    "Çalışma Günleri & Saatleri" => "Çalışma Günleri & Saatleri",
     "Çıkış Yap" => "Çıkış Yap",
     "Çıkış İşlemi Başarılı" => "Çıkış İşlemi Başarılı",
     "İlçe" => "İlçe",

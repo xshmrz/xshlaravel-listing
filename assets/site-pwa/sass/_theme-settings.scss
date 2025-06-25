@@ -9,12 +9,12 @@ $colorSuccess              : #34C759;
 $colorWarning              : #FE9500;
 $colorDanger               : #EC4433;
 $default-theme-colors      : (
-		"primary":    #3a4d9d,
-		"secondary":  #759cff,
-		"info":       #bfd6fd,
-		"success":    #00bd6e,
-		"warning":    #e9d200,
-		"danger":     #fd1c00,
+		"primary":    #0b74ff,
+		"secondary":  #382768,
+		"info":       #e4008a,
+		"success":    #009957,
+		"warning":    #dfc800,
+		"danger":     #ed1600,
 );
 $colorPrimary              : if(map-has-key($default-theme-colors, "primary"), map-get($default-theme-colors, "primary"), $colorPrimary);
 $colorSecondary            : if(map-has-key($default-theme-colors, "secondary"), map-get($default-theme-colors, "secondary"), $colorSecondary);
